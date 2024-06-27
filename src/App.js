@@ -1,25 +1,63 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import "./Style/style.css"
+import Navbar from './Component/Navbar'
+import Home from './Component/Home'
+import About from './Component/About'
+import Menu from './Component/Menu'
+import Products from './Component/Products'
+import Review from './Component/Review'
+import Contact  from './Component/Contect'
+import Blog from './Component/Blogs'
+import Footer from './Footer'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
-function App() {
+import Register from './Component/Register'
+// import Signup from './Component/Signup'
+
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {/* <Navbar />
+      <Home />
+      <About />
+      <Menu />
+      <Products />
+      <Review />
+      <Contact />
+      <Blog />
+      <Footer /> */}
+      <BrowserRouter>
+      <Navbar/>
+      <div className='mt-[5rem]'>
+
+   
+      <Routes>
+        <Route path="/" element={<Home />}/>
+        <Route path="/home" element={<Home />}/>
+       
+        <Route path="/signup" element={<Register />}/>
+        <Route path="/about" element={<About />}/>
+        <Route path="/menu" element={<Menu />}/>
+        <Route path="/products" element={<Products />}/>
+        <Route path="/review" element={ <Review />}/>
+        <Route path="/contect" element={ <Contact />}/>
+        <Route path="/blog" element={ <Blog />}/>
+       
+       
+
+      </Routes>   
+      </div>
+      {/* <About />
+      <Menu />
+      <Review />
+      <Contact />
+      <Blog /> */}
+      <Footer/>
+      </BrowserRouter>
+
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
